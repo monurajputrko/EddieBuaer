@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F4F4F4;
+            margin-top: 40px;
+        }
+        
+        button {
+            margin: 20px;
+            padding: 10px;
+            background-color: #333333;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button a {
+            color: white;
+            text-decoration: none;
+        }
+
+        button:hover {
+            background-color: #454545;
+        }
+
+        form {
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+        }
+        
+        input{
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        
+        input[type="submit"]{
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333333;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #454545;
+        }
+        
+        h1 {
+            margin-top: 0;
+            text-align: center;
+            font-size: 24px;
+            color: #333333;
+        }
+    </style>
+</head>
+<body>
+    <button><a href="./index.html">Home</a></button>
+    <form>
+        <h1>Enter OTP</h1>
+        <input type="number" id="otp" placeholder="Enter OTP" value="1234">
+        <input id="abba" type="submit" value="Submit">
+        <!-- <img src="index.html" alt=""> -->
+    </form>
+</body>
+</html>
+
+<script >
+    document.querySelector("form").addEventListener("submit", validateOtp)
+
+    function validateOtp() {
+        event.preventDefault()
+        let otp=document.getElementById("otp").value
+        if(otp!="1234" ) {
+            alert("Please enter correct OTP!")
+        }   
+        else {
+            alert("Payment successful!")
+            window.location.assign("paymentsucc.html");
+           
+        }
+    }
+</script>
